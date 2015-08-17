@@ -99,7 +99,7 @@ meteor test-packages ./
 ````
 
 
-### Not suported (yet)
+### Not supported yet
 
 A few resources are not supported yet
 
