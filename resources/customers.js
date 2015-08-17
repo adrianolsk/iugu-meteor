@@ -30,7 +30,8 @@ Iugu.API.prototype.get_customer = function(id) {
   var ret = HTTP.get(this.base_url + 'customers/' + id, {
     auth: this.api_token + ':'
   });
-  return this.check_for_errors(ret).items;
+  console.log(ret);
+  return this.check_for_errors(ret);
 };
 
 /*remove customer (if not in use)*/

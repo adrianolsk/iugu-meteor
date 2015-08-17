@@ -39,7 +39,7 @@ Tinytest.add('Iugu - get customer', function(test) {
   console.log(result);
   test.isNotUndefined(result, "Cliente nao retornou da API do Iugu")
   if(result)
-     test.equal(result.name, testCustomer.name, "Falha ao buscar cliente");
+     test.equal(result.name, TEST_DATA.customer.name, "Falha ao buscar cliente");
 });
 
 /*Nos testes a API do IUGU não estava retornando o cliente nessa busca*/

@@ -1,6 +1,6 @@
 Package.describe({
   name: 'adrianolsk:iugu',
-  version: '0.0.1',
+  version: '0.0.2',
   // Brief, one-line summary of the package.
   summary: 'Provide integration with the Brazilian payment gateway Iugu api ',
   // URL to the Git repository containing the source code for this package.
@@ -34,11 +34,11 @@ Package.onTest(function(api) {
   api.addFiles('tests/0-config-api.js', ['server']);
 
   //You can comment any line a bellow ant test only those you want
- api.addFiles('tests/1-customers-tests.js', ['server']);
-  api.addFiles('tests/2-payment-methods-tests.js', ['server']);
-  api.addFiles('tests/3-invoices-tests.js', ['server']);
-  api.addFiles('tests/4-plans-tests.js', ['server']);
-  api.addFiles('tests/5-subscriptions-tests.js', ['server']);
+  api.addFiles('tests/1-customers-tests.js', ['server']);
+  // api.addFiles('tests/2-payment-methods-tests.js', ['server']);
+  // api.addFiles('tests/3-invoices-tests.js', ['server']);
+  // api.addFiles('tests/4-plans-tests.js', ['server']);
+  // api.addFiles('tests/5-subscriptions-tests.js', ['server']);
 
 
 });

@@ -12,7 +12,7 @@ The package supports the methods bellow:
 * create_customer
 * update_customer
 * customers (list)
-* get_customer (1 Issue here, iugu return undefined)
+* get_customer 
 * remove_customer
 
 #### Payment methods
