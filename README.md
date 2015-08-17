@@ -6,23 +6,23 @@ The oficial iugu documentation can be found here https://iugu.com/referencias/ap
 
 Please read everything bellow before you start to using it
 
-#### Resources in this package
+## Resources in this package
 The package supports the methods bellow:
-- Customers
+#### Customers
 * create_customer
 * update_customer
 * customers (list)
 * get_customer (1 Issue here, iugu return undefined)
 * remove_customer
 
-- Payment methods
+#### Payment methods
 * create_payment_method
 * payment_methods (list)
 * get_payment_method
 * update_payment_method
 * remove_payment_method
 
-- Invoices
+#### Invoices
 * create_invoice
 * get_invoice
 * cancel_invoice
@@ -30,7 +30,7 @@ The package supports the methods bellow:
 * invoices (list)
 * refund_invoice
 
-- Plans
+#### Plans
 * create_plan
 * update_plan
 * get_plan
@@ -38,7 +38,7 @@ The package supports the methods bellow:
 * remove_plan
 * plans (list)
 
-- Subscriptions
+#### Subscriptions
 * create_subscription
 * update_subscription
 * remove_subscription
@@ -50,11 +50,11 @@ The package supports the methods bellow:
 * subscriptions
 * get_subscription
 
-- Charge and Bank Slip
+#### Charge and Bank Slip
 * charge
 * charge_bank_slip
 
-#### Testing installing the package with meteor add
+## Testing installing the package with meteor add
 
 Setup the startup configuration with your api key
 * Use the test key first
@@ -74,7 +74,7 @@ Meteor.methods({
   ````
 
 
-#### Testing cloning the package
+## Testing cloning the package
 
 If you are cloning this repository you can run the tests directly on this package using meteor
 change the configuration on
@@ -99,7 +99,7 @@ meteor test-packages ./
 ````
 
 
-#### Not suported (yet)
+### Not suported (yet)
 
 A few resources are not supported yet
 
@@ -107,7 +107,7 @@ A few resources are not supported yet
 - Marketplace
 
 
-#### Webhooks (Gatilhos)
+## Webhooks (Gatilhos)
 
 After a invoice is marked as paid or any other action, iugu can call a url from your website,
 you can configure this url on https://iugu.com/a/webhooks you need to put a published url
@@ -116,12 +116,13 @@ localhost will not work.
 I suggest you create a collection to insert the returned data to check it later
 
 ````js
-//lib directory
+//lib directory (client and server)
 Iugu = new Mongo.Collection("iugu");
 ````
 
 To create a URL you can either use Ironrouter if your are used to it
 ````js
+//server
 Router.onBeforeAction(Iron.Router.bodyParser.urlencoded({
   extended: false
 }));
@@ -138,8 +139,12 @@ or you can use the JsonRoutes packages (meteor add simple:json-routes)
 I am using it since I am using angular and Ironrouter conflicted with ui-router.
 
 ````js
+//server
 JsonRoutes.add("post", "/api/retorno", function(req, res, next) {
   Iugu.insert(req.body);
   JsonRoutes.sendResult(res, 200, req.body);
 });
 ````
+
+Save your URl on iugu webhooks  ex: http://yoursite.com/api/retorno
+and check the collections after your tests
