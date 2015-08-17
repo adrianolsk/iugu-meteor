@@ -28,17 +28,16 @@ Package.onUse(function(api) {
 
 Package.onTest(function(api) {
   api.use('tinytest');
-  api.use('mongo');
   api.use('adrianolsk:iugu');
 
   //change the configuration in the file bellow
   api.addFiles('tests/0-config-api.js', ['server']);
 
   //You can comment any line a bellow ant test only those you want
-//  api.addFiles('tests/1-customers-tests.js', ['server']);
-  //api.addFiles('tests/2-payment-methods-tests.js', ['server']);
-  //api.addFiles('tests/3-invoices-tests.js', ['server']);
-  //api.addFiles('tests/4-plans-tests.js', ['server']);
+ api.addFiles('tests/1-customers-tests.js', ['server']);
+  api.addFiles('tests/2-payment-methods-tests.js', ['server']);
+  api.addFiles('tests/3-invoices-tests.js', ['server']);
+  api.addFiles('tests/4-plans-tests.js', ['server']);
   api.addFiles('tests/5-subscriptions-tests.js', ['server']);
 
 
